@@ -9,6 +9,13 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ModalContactoComponent } from './modal-contacto/modal-contacto.component';
+import { CardsComponent } from './cards/cards.component';
+import { Website } from './website';
+import { RoutingModule } from './routing/routing.module';
+import { PageComponent } from './page/page.component';
+import { RouterModule }  from '@angular/router';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -17,15 +24,30 @@ import { NavigationComponent } from './navigation/navigation.component';
     BodyComponent,
     FooterComponent,
     SliderComponent,
-    NavigationComponent
+    NavigationComponent,
+    ModalContactoComponent,
+    CardsComponent,
+    PageComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: BodyComponent
+      },
+      {
+        path: 'soluciones/:link',
+        component: PageComponent
+      }
+    ]),
+    RoutingModule
   ],
-  providers: [],
+  providers: [Website],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

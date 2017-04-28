@@ -1,3 +1,17 @@
-<p>
-  slider works!
-</p>
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" *ngFor="let slider of sliders; let index = index" 
+    data-slide-to="{i}"
+    [class.active]="index == 0"></li>
+  </ol>
+  <div class="carousel-inner d-block" role="listbox">
+    <div class="carousel-item background-slider img-fluid" 
+    *ngFor="let slider of sliders; let index = index" 
+    [class.active]="index == 0"
+    [style.background-image]="'url(' + slider.sliderField.sizes.large + ')'"
+    >
+    <div class="carousel-caption d-none d-md-block">
+    <h3>{{ slider.sliderField.caption }}</h3>
+    <p class="d-md-block btn-info">{{ slider.sliderField.description }}</p>
+  </div>
+</div>

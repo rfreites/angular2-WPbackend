@@ -1,0 +1,40 @@
+.card-img{
+    background-size: cover;
+    background-position: 75% 100%;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    width: 100%;
+}
+
+.card-img-overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+h4, .h4 {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.card__link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    -webkit-transition: color .1s ease;
+    transition: color .1s ease;
+    background: rgba(240, 248, 255, 0.33);
+}

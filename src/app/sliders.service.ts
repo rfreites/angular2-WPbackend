@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-
-import { MenuWP } from './menu-wp';
+import { Slider } from './slider';
 import { Website } from './website';
 
 @Injectable()
-export class MenuService{
+export class SlidersService {
 
-  // private headers = new Headers({'Content-Type': 'application/json'});
+  private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(
     private http: Http,
     private website: Website
   ) { }
 
-  getMenuWp(id:number): Promise<MenuWP> {
-    const url = `${this.website.url}/${this.website.menuWpUrl}/${id}`;
+  getSliders(): Promise<Slider> {
+    const url = `${this.website.url}/${this.website.slider}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json())

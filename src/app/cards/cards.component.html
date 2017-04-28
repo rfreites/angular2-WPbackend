@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row mt-5">
+    <h1>Soluciones en Software para su negocio</h1>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-4 mt-3" *ngFor="let post of posts">
+      <a (click)="gotoPost(post)" class="card__link"></a>
+      <div class="card card-inverse">
+        <div *ngIf="post.acf != null">
+          <div class="card-img" [style.background-image]="'url(' + post.acf.featureIndustriasImage.url + ')'">
+        </div>
+        <div class="card-img-overlay">
+          <h4 class="card-title">{{ post.title.rendered }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
